@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proceduralist — Bedside Procedure Reference for Clinicians</title>
+<meta name="description" content="Proceduralist is an iOS reference app for bedside procedures: supplies checklists, step-by-step guidance with video, contraindications, complications, and a personal procedure portfolio.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Proceduralist</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Every bedside procedure.<br><span>One pocket reference.</span></h1>
+  <p class="tagline">Proceduralist puts supplies checklists, step-by-step guidance, evidence-based references, and a personal procedure portfolio in the hands of clinicians — right at the bedside.</p>
+  <!-- Replace href with your App Store link when available -->
+  <a class="badge" href="#">Download on the App Store</a>
+  <a class="badge secondary" href="support.html">Get Support</a>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2 class="section-title">Procedures Covered</h2>
+    <p class="section-sub">Comprehensive coverage of common bedside procedures</p>
+    <div class="chips">
+      <span class="chip">Central Venous Line</span>
+      <span class="chip">Arterial Line</span>
+      <span class="chip">Lumbar Puncture</span>
+      <span class="chip">Paracentesis</span>
+      <span class="chip">Thoracentesis</span>
+      <span class="chip">Nasogastric Tube</span>
+      <span class="chip">Arterial Blood Gas</span>
+      <span class="chip">Central Line Removal</span>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <h2 class="section-title">What's Inside</h2>
+    <p class="section-sub">Four tabs. Everything you need before, during, and after the procedure.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>🧰 Supplies</h3>
+        <p>Complete supply and kit checklists for every procedure, including common commercial kits. Customize kit preferences to match what your institution stocks so you never walk into the room missing an item.</p>
+      </div>
+      <div class="card">
+        <h3>📋 Steps</h3>
+        <p>Clear, step-by-step walkthroughs from positioning to dressing, with embedded video demonstrations of key maneuvers — ultrasound technique, needle handling, manometry, and more.</p>
+      </div>
+      <div class="card">
+        <h3>⚠️ Indications, Contraindications &amp; Complications</h3>
+        <p>Quickly review indications, absolute and relative contraindications, and complications for each procedure — with the supporting level of evidence graded so you know how strong the data is.</p>
+      </div>
+      <div class="card">
+        <h3>📁 Portfolio</h3>
+        <p>Log the procedures you perform and build a personal portfolio over time — useful for credentialing and tracking your own experience. Stored privately on your device only.</p>
+      </div>
+      <div class="card">
+        <h3>📚 References</h3>
+        <p>Every recommendation is backed by peer-reviewed literature. Browse full citations from journals like NEJM, JAMA, CHEST, and Anesthesiology directly in the app.</p>
+      </div>
+      <div class="card">
+        <h3>🎥 Procedure Videos</h3>
+        <p>Short, focused video clips demonstrate the hardest parts of each procedure — from arterial line draping and suturing to lumbar puncture manometry and stylet handling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2 class="section-title">Try It Yourself</h2>
+    <p class="section-sub">Live, interactive previews using real content from the app — tap, check, and swipe through a lumbar puncture.</p>
+    <div class="demos">
+
+      <!-- ===== Demo 1: Supplies checklist ===== -->
+      <div class="demo-wrap">
+        <div class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="app-bar">
+              <h4>Supplies</h4>
+              <div class="sub">Lumbar Puncture</div>
+            </div>
+            <div class="app-body">
+              <div class="kit-toggle">
+                <button id="kitNoKit" class="on" onclick="setKit('nokit')">No Kit</button>
+                <button id="kitTray" onclick="setKit('tray')">LP Tray (Medline)</button>
+              </div>
+              <div class="progress-pill" id="supplyProgress"></div>
+              <div id="supplyList"></div>
+            </div>
+            <div class="tab-bar">
+              <span class="on"><span class="ic">✂️</span>Supplies</span>
+              <span><span class="ic">📋</span>Steps</span>
+              <span><span class="ic">📁</span>Portfolio</span>
+              <span><span class="ic">📚</span>References</span>
+            </div>
+          </div>
+        </div>
+        <p class="demo-label"><strong>Supplies</strong> — gather everything before you enter the room. Toggle kit preferences to match your hospital's stock.</p>
+      </div>
+
+      <!-- ===== Demo 2: Steps walkthrough ===== -->
+      <div class="demo-wrap">
+        <div class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="app-bar">
+              <h4>Steps</h4>
+              <div class="sub">Lumbar Puncture</div>
+            </div>
+            <div class="app-body" id="stepBody"></div>
+            <div class="step-nav">
+              <button id="stepPrev" onclick="moveStep(-1)">‹ Back</button>
+              <span class="count" id="stepCount"></span>
+              <button id="stepNext" onclick="moveStep(1)">Next ›</button>
+            </div>
+            <div class="tab-bar">
+              <span><span class="ic">✂️</span>Supplies</span>
+              <span class="on"><span class="ic">📋</span>Steps</span>
+              <span><span class="ic">📁</span>Portfolio</span>
+              <span><span class="ic">📚</span>References</span>
+            </div>
+          </div>
+        </div>
+        <p class="demo-label"><strong>Steps</strong> — walk through the procedure one step at a time. In the app, key steps include photos and video demonstrations.</p>
+      </div>
+
+      <!-- ===== Demo 3: Clinical info (indications / contraindications / complications) ===== -->
+      <div class="demo-wrap">
+        <div class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="app-bar">
+              <h4>Clinical Info</h4>
+              <div class="sub">Lumbar Puncture</div>
+            </div>
+            <div class="app-body">
+              <div class="ci-seg">
+                <button id="segInd" onclick="setCi('ind')">Indications</button>
+                <button id="segCi" class="on" onclick="setCi('ci')">Contraindications</button>
+                <button id="segComp" onclick="setCi('comp')">Complications</button>
+              </div>
+              <div class="ci-hint" id="ciHint"></div>
+              <div id="ciList"></div>
+            </div>
+            <div class="tab-bar">
+              <span><span class="ic">✂️</span>Supplies</span>
+              <span class="on"><span class="ic">📋</span>Steps</span>
+              <span><span class="ic">📁</span>Portfolio</span>
+              <span><span class="ic">📚</span>References</span>
+            </div>
+          </div>
+        </div>
+        <p class="demo-label"><strong>Clinical Info</strong> — indications, severity-graded contraindications, and complications with published incidence rates.</p>
+      </div>
+
+      <!-- ===== Demo 4: Portfolio tracker ===== -->
+      <div class="demo-wrap">
+        <div class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="app-bar">
+              <h4>Portfolio</h4>
+              <div class="sub">Your procedure log</div>
+            </div>
+            <div class="app-body">
+              <div class="pf-total" id="pfTotal"></div>
+              <div id="pfList"></div>
+              <p class="pf-note">In the app, your portfolio is stored privately on your device — nothing is ever uploaded.</p>
+            </div>
+            <div class="tab-bar">
+              <span><span class="ic">✂️</span>Supplies</span>
+              <span><span class="ic">📋</span>Steps</span>
+              <span class="on"><span class="ic">📁</span>Portfolio</span>
+              <span><span class="ic">📚</span>References</span>
+            </div>
+          </div>
+        </div>
+        <p class="demo-label"><strong>Portfolio</strong> — tap + to log procedures as you perform them and build a record for credentialing.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <h2 class="section-title">Built by Physicians</h2>
+    <p class="section-sub">Created and reviewed by practicing physicians</p>
+    <div class="chips">
+      <span class="chip">Ryan Fredette, MD</span>
+      <span class="chip">Takugo Cho, MD</span>
+      <span class="chip">Ann Yong Lim, MD</span>
+      <span class="chip">Preeti Jossy, MD</span>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="callout">
+      <strong>For educational and reference use only.</strong> Proceduralist is an informational tool for trained healthcare professionals. It is not medical advice and does not replace professional training, clinical judgment, institutional policies, or licensed medical oversight. See our <a href="terms.html">Terms of Use</a>.
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <p>
+      <a href="index.html">Home</a> ·
+      <a href="support.html">Support</a> ·
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="terms.html">Terms of Use</a>
+    </p>
+    <p>© 2026 Proceduralist. All rights reserved. · <a href="mailto:proceduralist@outlook.com">proceduralist@outlook.com</a></p>
+  </div>
+</footer>
+
+<script>
+/* ================= Demo data — real content from the Proceduralist app ================= */
+
+// --- Supplies (Lumbar Puncture) ---
+var supplyData = {
+  nokit: [
+    { name: "Personal Protective Equipment", sub: "Mask · Surgical Cap · Sterile Gloves · Sterile Gown" },
+    { name: "Fenestrated drape" },
+    { name: "Sponge applicators / sponge sticks (x3)" },
+    { name: "Lidocaine 2%, 5 mL vial" },
+    { name: "Manometer" },
+    { name: "3-way stopcock" },
+    { name: "3 mL Luer lock syringe" },
+    { name: "Fill needle" },
+    { name: "23 Ga needle" },
+    { name: "3.5\" Spinal needle" },
+    { name: "Specimen tubes #1–4" },
+    { name: "Gauze pads" },
+    { name: "Extension tubing" },
+    { name: "Adhesive bandage" },
+    { name: "Absorbent towel" }
+  ],
+  tray: [
+    { name: "Personal Protective Equipment", sub: "Mask · Surgical Cap · Sterile Gloves · Sterile Gown" },
+    { name: "Lumbar Puncture Tray", sub: "Drape · Manometer · Stopcock · Spinal needle · Lidocaine · Specimen tubes · Gauze · Bandage" },
+    { name: "Extra ChloraPrep or betadine (optional)" }
+  ]
+};
+var currentKit = "nokit";
+var checked = {};
+
+function setKit(kit) {
+  currentKit = kit;
+  checked = {};
+  document.getElementById("kitNoKit").className = kit === "nokit" ? "on" : "";
+  document.getElementById("kitTray").className = kit === "tray" ? "on" : "";
+  renderSupplies();
+}
+function toggleSupply(i) {
+  checked[i] = !checked[i];
+  renderSupplies();
+}
+function renderSupplies() {
+  var items = supplyData[currentKit];
+  var done = 0, html = "";
+  for (var i = 0; i < items.length; i++) {
+    if (checked[i]) done++;
+    html += '<div class="supply-row' + (checked[i] ? " done" : "") + '" onclick="toggleSupply(' + i + ')">'
+          + '<span class="box">' + (checked[i] ? "✓" : "") + '</span>'
+          + '<span><span class="nm">' + items[i].name + '</span>'
+          + (items[i].sub ? '<br><span class="sub-items">' + items[i].sub + '</span>' : "")
+          + '</span></div>';
+  }
+  document.getElementById("supplyList").innerHTML = html;
+  document.getElementById("supplyProgress").textContent =
+    done === items.length ? "✓ All supplies gathered — ready to go!" : done + " of " + items.length + " gathered";
+}
+
+// --- Steps (Lumbar Puncture, condensed from the app) ---
+var steps = [
+  { h: "Patient Positioning",
+    b: "Place the patient either sitting <strong>upright</strong> or in <strong>lateral decubitus</strong> position. The lateral position is preferred for opening pressure measurement.",
+    c: "Encourage the patient to curl forward to widen interspinous spaces" },
+  { h: "Identify Landmarks",
+    b: "Palpate the highest points of the iliac crests and project an intercristal (Tuffier's) line to the midline — this typically intersects the <strong>L4–L5 interspace</strong>. Insert at L3–L4 or L4–L5, below the conus medullaris (usually <strong>L1–L2</strong> in adults)." },
+  { h: "Skin Preparation",
+    b: "Mark the insertion site, then prep with chlorhexidine or povidone–iodine in concentric outward circles. Allow to dry completely, then place sterile drapes to establish a sterile field." },
+  { h: "Local Anesthesia",
+    b: "Inject a lidocaine wheal, then infiltrate local anesthetic subcutaneously along the intended needle tract.",
+    c: "Aspirate before each injection to avoid intravascular administration" },
+  { h: "Needle Insertion",
+    b: "With the stylet in place, insert the needle with the bevel facing <strong>cephalad</strong>, angled toward the <strong>umbilicus</strong>. Advance through the ligamentum flavum — indicated by a subtle <em>pop</em>.",
+    c: "Check for CSF return in 2 mm increments" },
+  { h: "Troubleshooting",
+    b: "If bone is contacted, reposition without withdrawing fully. If CSF flow is sluggish, rotate the needle 90° — a nerve root may obscure the side port." },
+  { h: "Opening Pressure",
+    b: "With the patient in lateral decubitus, attach the stopcock (closed toward the patient), assemble the manometer, then open the stopcock and let the CSF column stabilize. Record the opening pressure.",
+    c: "Ensure the first collection tube is open and close by" },
+  { h: "CSF Collection",
+    b: "Allow CSF to drip passively into the tubes — collect <strong>3–4 mL per tube</strong> (12–16 mL total). Adults produce 500–600 mL of CSF daily, so collected volume is replenished within 20–60 minutes.",
+    c: "Never aspirate cerebrospinal fluid" },
+  { h: "Post-Procedure Care",
+    b: "<strong>Replace the stylet before removing the needle</strong> — this prevents arachnoid tissue from threading back through the dural opening. Apply a bandage and monitor for delayed complications." }
+];
+var stepIdx = 0;
+function moveStep(d) {
+  stepIdx = Math.max(0, Math.min(steps.length - 1, stepIdx + d));
+  renderStep();
+}
+function renderStep() {
+  var s = steps[stepIdx];
+  var dots = "";
+  for (var i = 0; i < steps.length; i++) dots += '<i class="' + (i === stepIdx ? "on" : "") + '"></i>';
+  document.getElementById("stepBody").innerHTML =
+    '<div class="step-dots">' + dots + '</div>'
+    + '<div class="step-card"><h5>' + (stepIdx + 1) + ". " + s.h + '</h5><p>' + s.b + '</p>'
+    + (s.c ? '<div class="step-callout">💡 ' + s.c + '</div>' : "")
+    + '</div>';
+  document.getElementById("stepCount").textContent = "Step " + (stepIdx + 1) + " of " + steps.length;
+  document.getElementById("stepPrev").disabled = stepIdx === 0;
+  document.getElementById("stepNext").disabled = stepIdx === steps.length - 1;
+}
+
+// --- Clinical info (Lumbar Puncture) ---
+var ciData = {
+  ind: {
+    hint: "Common indications for lumbar puncture",
+    items: [
+      { name: "Obtain cerebrospinal fluid for analysis" },
+      { name: "Measure opening pressure" },
+      { name: "Administer medications such as antibiotics, anesthetics, or chemotherapy" }
+    ]
+  },
+  ci: {
+    hint: "Tap a contraindication to learn more",
+    items: [
+      { name: "Signs of herniation", tag: "absolute" },
+      { name: "Markedly increased ICP with focal deficits", tag: "absolute" },
+      { name: "Severe cardiorespiratory instability", tag: "absolute" },
+      { name: "Skin infection at the puncture site", tag: "relative" },
+      { name: "Significant coagulopathy", tag: "relative",
+        more: "With coagulopathy, risk of spinal hematoma increases to 0.23% (CI 0.15–0.34%). Bodilsen et al., JAMA 2020." }
+    ]
+  },
+  comp: {
+    hint: "Tap a complication to see its incidence",
+    items: [
+      { name: "Post-Dural Puncture Headache", rate: "6.9%", more: "Nath S, et al. Atraumatic vs conventional LP needles: systematic review & meta-analysis. Lancet 2018." },
+      { name: "Nerve Root Irritation", rate: "11%", more: "Nath S, et al. Lancet 2018." },
+      { name: "Traumatic Tap", rate: "6%", more: "Nath S, et al. Lancet 2018." },
+      { name: "Spinal Hematoma", rate: "0.20%", more: "Range 0.16–0.24%. Bodilsen J, et al. JAMA 2020;324(14):1419–1428." },
+      { name: "Herniation", rate: "0.10%", more: "Range 0.10–3.0%. Costerus JM, et al. Clin Infect Dis 2018." },
+      { name: "Meningitis", rate: "0.002%", more: "Baer ET. Post-dural puncture bacterial meningitis. Anesthesiology 2006." }
+    ]
+  }
+};
+var ciMode = "ci";
+function setCi(mode) {
+  ciMode = mode;
+  document.getElementById("segInd").className = mode === "ind" ? "on" : "";
+  document.getElementById("segCi").className = mode === "ci" ? "on" : "";
+  document.getElementById("segComp").className = mode === "comp" ? "on" : "";
+  renderCi();
+}
+function toggleCi(el) { el.classList.toggle("open"); }
+function renderCi() {
+  var d = ciData[ciMode], html = "";
+  for (var i = 0; i < d.items.length; i++) {
+    var it = d.items[i];
+    var tappable = it.more ? ' tappable" onclick="toggleCi(this)"' : '"';
+    html += '<div class="ci-item' + tappable + '>'
+          + (it.tag ? '<span class="tag ' + it.tag + '">' + it.tag + '</span>' : "")
+          + (it.rate ? '<span class="tag rate">' + it.rate + '</span>' : "")
+          + '<div>' + it.name + (it.more ? " <span style='color:#9ca3af'>›</span>" : "") + '</div>'
+          + (it.more ? '<div class="more">' + it.more + '</div>' : "")
+          + '</div>';
+  }
+  document.getElementById("ciHint").textContent = d.hint;
+  document.getElementById("ciList").innerHTML = html;
+}
+
+// --- Portfolio tracker ---
+var pfData = [
+  { name: "Central Venous Line", n: 4 },
+  { name: "Arterial Line", n: 7 },
+  { name: "Lumbar Puncture", n: 3 },
+  { name: "Paracentesis", n: 5 },
+  { name: "Nasogastric Tube", n: 2 },
+  { name: "Arterial Blood Gas", n: 9 }
+];
+function pfAdd(i, d) {
+  pfData[i].n = Math.max(0, pfData[i].n + d);
+  renderPf();
+}
+function renderPf() {
+  var total = 0, html = "";
+  for (var i = 0; i < pfData.length; i++) {
+    total += pfData[i].n;
+    html += '<div class="pf-row"><span class="nm">' + pfData[i].name + '</span>'
+          + '<button onclick="pfAdd(' + i + ',-1)">−</button>'
+          + '<span class="cnt">' + pfData[i].n + '</span>'
+          + '<button onclick="pfAdd(' + i + ',1)">+</button></div>';
+  }
+  document.getElementById("pfTotal").textContent = total + " procedures logged";
+  document.getElementById("pfList").innerHTML = html;
+}
+
+// init
+renderSupplies();
+renderStep();
+renderCi();
+renderPf();
+</script>
+
+</body>
+</html>
