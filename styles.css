@@ -1,0 +1,118 @@
+/* Proceduralist — shared site styles */
+:root {
+  --sage: #6f8c5e;
+  --sage-light: #9ebf8a;
+  --sage-bg: #f2f6ef;
+  --ink: #1f2937;
+  --ink-soft: #4b5563;
+  --ink-faint: #6b7280;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --warn-bg: #fff7ed;
+  --warn-border: #fdba74;
+  --max-width: 960px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: #fafaf9;
+  line-height: 1.65;
+}
+
+.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* Header / nav */
+header.site {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+}
+header.site .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; gap: 8px;
+}
+.brand { font-size: 1.25rem; font-weight: 700; color: var(--sage); text-decoration: none; }
+nav a {
+  color: var(--ink-soft); text-decoration: none; margin-left: 18px; font-size: 0.95rem;
+}
+nav a:hover, nav a.active { color: var(--sage); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--sage-bg) 0%, #fafaf9 100%);
+  text-align: center;
+  padding: 72px 24px 56px;
+}
+.hero h1 { font-size: 2.6rem; line-height: 1.15; margin-bottom: 16px; }
+.hero h1 span { color: var(--sage); }
+.hero p.tagline {
+  font-size: 1.2rem; color: var(--ink-soft); max-width: 640px; margin: 0 auto 28px;
+}
+.badge {
+  display: inline-block; background: var(--sage); color: #fff;
+  padding: 10px 22px; border-radius: 999px; font-weight: 600; text-decoration: none;
+}
+.badge.secondary { background: transparent; color: var(--sage); border: 2px solid var(--sage); margin-left: 10px; }
+
+/* Sections */
+section.block { padding: 56px 0; }
+section.block.alt { background: var(--sage-bg); }
+h2.section-title { font-size: 1.8rem; text-align: center; margin-bottom: 8px; }
+p.section-sub { text-align: center; color: var(--ink-faint); margin-bottom: 36px; }
+
+/* Cards / grids */
+.grid { display: grid; gap: 20px; }
+.grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 24px;
+}
+.card h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--sage); }
+.card p { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* Procedure chips */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.chip {
+  background: var(--card); border: 1px solid var(--sage-light); color: var(--ink);
+  border-radius: 999px; padding: 8px 18px; font-size: 0.95rem;
+}
+
+/* Screenshot placeholders */
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.shot {
+  aspect-ratio: 9 / 19; background: #eceee9; border: 2px dashed var(--sage-light);
+  border-radius: 24px; display: flex; align-items: center; justify-content: center;
+  color: var(--ink-faint); font-size: 0.85rem; text-align: center; padding: 12px;
+}
+.shot img { width: 100%; height: 100%; object-fit: cover; border-radius: 22px; }
+
+/* Disclaimer callout */
+.callout {
+  background: var(--warn-bg); border: 1px solid var(--warn-border);
+  border-radius: 14px; padding: 20px 24px; color: #7c2d12; font-size: 0.95rem;
+}
+
+/* Legal / document pages */
+.doc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 40px; margin: 40px auto; }
+.doc h1 { font-size: 2rem; margin-bottom: 4px; }
+.doc p.updated { color: var(--ink-faint); font-size: 0.9rem; margin-bottom: 28px; }
+.doc h2 { font-size: 1.25rem; margin: 28px 0 10px; color: var(--sage); }
+.doc p, .doc li { color: var(--ink-soft); margin-bottom: 12px; }
+.doc ul { padding-left: 24px; margin-bottom: 12px; }
+.doc a { color: var(--sage); }
+
+/* Footer */
+footer.site {
+  border-top: 1px solid var(--border); padding: 28px 0; margin-top: 40px;
+  text-align: center; color: var(--ink-faint); font-size: 0.85rem;
+}
+footer.site a { color: var(--sage); text-decoration: none; margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .doc { padding: 24px; }
+}
