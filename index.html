@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proceduralist — Bedside Procedure Reference for Clinicians</title>
+<meta name="description" content="Proceduralist is an iOS reference app for bedside procedures: supplies checklists, indications, contraindications, complications, step-by-step guidance with images and video, and a personal procedure portfolio.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Proceduralist</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Every bedside procedure.<br><span>One pocket reference.</span></h1>
+  <p class="tagline">Proceduralist is a comprehensive reference tool that provides clinicians with standard equipment lists, step-by-step procedural reviews, evidence-based literature, and a personal logbook to track their own procedural history.</p>
+  <a class="app-store-badge" href="https://apps.apple.com/us/app/proceduralist/id6755323054" target="_blank" rel="noopener" aria-label="Download Proceduralist on the App Store" style="display:inline-block;line-height:0">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 40" role="img" aria-hidden="true" focusable="false" style="height:54px;width:auto;display:block">
+      <rect x="0.5" y="0.5" width="125" height="39" rx="6.5" fill="#000" stroke="#A6A6A6" stroke-opacity="0.5"/>
+      <path fill="#fff" d="M24.769,20.301c-0.023-2.586,2.117-3.844,2.215-3.903c-1.211-1.77-3.093-2.012-3.762-2.039c-1.602-0.164-3.123,0.943-3.934,0.943c-0.808,0-2.062-0.92-3.39-0.894c-1.747,0.027-3.354,1.018-4.255,2.59c-1.811,3.143-0.462,7.793,1.296,10.342c0.861,1.249,1.888,2.65,3.234,2.601c1.299-0.052,1.788-0.838,3.357-0.838c1.568,0,2.011,0.838,3.382,0.81c1.396-0.026,2.281-1.273,3.135-2.529c0.998-1.45,1.41-2.853,1.432-2.925C29.879,24.397,24.795,22.449,24.769,20.301z"/>
+      <path fill="#fff" d="M22.119,12.661c0.717-0.871,1.205-2.08,1.07-3.285c-1.035,0.043-2.292,0.689-3.034,1.541c-0.659,0.754-1.243,1.967-1.089,3.146C20.231,14.105,21.401,13.519,22.119,12.661z"/>
+      <text x="37" y="16" fill="#fff" font-family="-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="7.5">Download on the</text>
+      <text x="36.5" y="31" fill="#fff" font-family="-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="-0.4">App Store</text>
+    </svg>
+  </a>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2 class="section-title">Procedures Covered</h2>
+    <p class="section-sub">Comprehensive coverage of common bedside procedures</p>
+    <div class="chips">
+      <span class="chip">Central Venous Line</span>
+      <span class="chip">Arterial Line</span>
+      <span class="chip">Lumbar Puncture</span>
+      <span class="chip">Paracentesis</span>
+      <span class="chip">Nasogastric Tube</span>
+      <span class="chip">Peripheral IV</span>
+      <span class="chip">Phlebotomy</span>
+      <span class="chip">Arterial Blood Gas</span>
+      <span class="chip">Central Line Removal</span>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <h2 class="section-title">What's Inside</h2>
+    <p class="section-sub">Four tabs. Quick access to supply lists, procedural reviews, evidence-based references, and a personal logbook.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>🧰 Supplies</h3>
+        <p>Complete supply lists with optional kit checklists for each procedure.</p>
+      </div>
+      <div class="card">
+        <h3>📋 Steps</h3>
+        <p>Clear, step-by-step walkthroughs from preparation to post procedure care.</p>
+      </div>
+      <div class="card">
+        <h3>🎥 Procedure Image and Videos</h3>
+        <p> Visual aids and reference media to review key procedural steps. </p>
+      </div>
+      <div class="card">
+        <h3>⚠️ Indications, Contraindications &amp; Complications</h3>
+        <p>Quickly review indications, absolute and relative contraindications, and complications for each procedure.</p>
+      </div>
+      <div class="card">
+        <h3>📁 Portfolio</h3>
+        <p>Log the procedures you perform and build a personal portfolio over time.</p>
+      </div>
+      <div class="card">
+        <h3>📚 References</h3>
+        <p>Browse full citations from journals like NEJM, JAMA, CHEST, and Anesthesiology directly in the app.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2 class="section-title">Try It Yourself</h2>
+    <p class="section-sub"> Interactive previews of the app screens below.</p>
+    <div class="demos">
+
+      <!-- ===================== Demo 1: SUPPLIES ===================== -->
+      <div class="demo-wrap">
+        <div class="phone">
+          <div class="screen" id="d1"></div>
+        </div>
+        <p class="demo-label"><strong>Supplies</strong> — browse procedures, then check off every item. Try the Lumbar Puncture list.</p>
+      </div>
+
+      <!-- ===================== Demo 2: STEPS ===================== -->
+      <div class="demo-wrap">
+        <div class="phone">
+          <div class="screen" id="d2"></div>
+        </div>
+        <p class="demo-label"><strong>Steps</strong> — filter by category and open Lumbar Puncture to expand each procedure step.</p>
+      </div>
+
+      <!-- ===================== Demo 3: CLINICAL INFO ===================== -->
+      <div class="demo-wrap">
+        <div class="phone">
+          <div class="screen" id="d3"></div>
+        </div>
+        <p class="demo-label"><strong>Clinical Info</strong> — indications, contraindications, and complications (tap for details).</p>
+      </div>
+
+      <!-- ===================== Demo 4: PORTFOLIO ===================== -->
+      <div class="demo-wrap">
+        <div class="phone">
+          <div class="screen" id="d4"></div>
+        </div>
+        <p class="demo-label"><strong>Portfolio</strong> — tap + and − to log procedures; every entry is date-stamped in your log history.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+<section class="block">
+  <div class="wrap">
+    <div class="callout">
+      <strong>For educational and reference use only.</strong> Proceduralist is an informational tool for trained healthcare professionals. It is not medical advice and does not replace professional training, clinical judgment, institutional policies, or licensed medical oversight. See our <a href="terms.html">Terms of Use</a>.
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <p>
+      <a href="index.html">Home</a> ·
+      <a href="support.html">Support</a> ·
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="terms.html">Terms of Use</a>
+    </p>
+    <p>© 2026 Proceduralist. · <a href="mailto:proceduralist@proceduralist.io">proceduralist@proceduralist.io</a></p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   Interactive demos — content and layout mirrored from the iOS app.
+   ===================================================================== */
+
+var SAGE = "#9ebf8a";
+var CAT = {
+  vascular:   { name: "Vascular Access",     icon: "🩸", color: "#ff3b30" },
+  diagnostic: { name: "Diagnostic Sampling", icon: "🧪", color: "#007aff" },
+  fluid:      { name: "Fluid Drainage",      icon: "💧", color: "#af52de" },
+  airway:     { name: "Airway & Tubes",      icon: "🫁", color: "#34c759" }
+};
+
+function tabBar(active) {
+  var tabs = [["✂️","Supplies"],["📋","Steps"],["📁","Portfolio"],["📚","References"]];
+  var h = '<div class="tab-bar">';
+  for (var i = 0; i < tabs.length; i++) {
+    h += '<span class="' + (tabs[i][1] === active ? "on" : "") + '"><span class="ic">' + tabs[i][0] + '</span>' + tabs[i][1] + '</span>';
+  }
+  return h + '</div>';
+}
+function navBar(title, backLabel, backFn, small) {
+  return '<div class="nav-ios">'
+    + (backLabel ? '<button class="back" onclick="' + backFn + '"><span class="ch">‹</span>' + backLabel + '</button>' : "")
+    + '<span class="title' + (small ? " small" : "") + '">' + title + '</span></div>';
+}
+function searchBar() { return '<div class="search-ios">🔍 Search procedures</div>'; }
+
+/* ===================== DEMO 1 — SUPPLIES ===================== */
+
+var supplyProcedures = [
+  { t: "Arterial Blood Gas" }, { t: "Arterial Line" }, { t: "Central Line Removal" },
+  { t: "Central Venous Line", s: "Internal Jugular" }, { t: "Lumbar Puncture", lp: true },
+  { t: "Nasogastric Tube" }, { t: "Paracentesis" }, { t: "Peripheral IV" },
+  { t: "Phlebotomy" }
+];
+var lpSupplies = {
+  required: [
+    { name: "Personal Protective Equipment", kit: ["Mask", "Surgical Cap", "Sterile Gloves", "Sterile Gown"] },
+    { name: "Adhesive bandage" }, { name: "Extension tubing" }, { name: "Fenestrated drape" },
+    { name: "Gauze pads" }, { name: "Sponge applicators / sponge sticks (x3)" },
+    { name: "Lidocaine 2%, 5 mL vial" }, { name: "Manometer" }, { name: "3-way stopcock" },
+    { name: "3 mL Luer lock syringe" }, { name: "Fill needle" }, { name: "23 Ga Needle" },
+    { name: "Additional sterile needles w/ caps" }, { name: "3.5\" Spinal needle" },
+    { name: "Specimen tubes/vials w/ caps (#1–4) (4)" }, { name: "Absorbent towel" }
+  ],
+  optional: [ { name: "Extra Chloraprep or betadine solution" } ]
+};
+var d1State = { screen: "list", checked: {}, expanded: {} };
+
+function d1Go(screen) { d1State.screen = screen; renderD1(); }
+function d1Check(key) { d1State.checked[key] = !d1State.checked[key]; renderD1(); }
+function d1Expand(key) { d1State.expanded[key] = !d1State.expanded[key]; renderD1(); }
+
+function renderD1() {
+  var el = document.getElementById("d1");
+  var h = '<div class="notch"></div>';
+  if (d1State.screen === "list") {
+    h += navBar("Supplies");
+    h += '<div class="app-scroll">' + searchBar() + '<div class="ios-list"><div class="ios-card">';
+    for (var i = 0; i < supplyProcedures.length; i++) {
+      var p = supplyProcedures[i];
+      h += '<div class="ios-row" ' + (p.lp ? 'onclick="d1Go(\'detail\')"' : "") + '>'
+        + '<span><span class="headline">' + p.t + '</span>'
+        + (p.s ? '<br><span class="caption">' + p.s + '</span>' : "") + '</span>'
+        + '<span class="chev">›</span></div>';
+    }
+    h += '</div></div></div>';
+  } else {
+    h += navBar("Lumbar Puncture", "Supplies", "d1Go('list')");
+    h += '<div class="app-scroll"><div class="ios-list">';
+    h += '<div class="ios-sec-head">Required</div><div class="ios-card">';
+    h += supplyRows(lpSupplies.required, "r");
+    h += '</div><div class="ios-sec-head">Optional</div><div class="ios-card">';
+    h += supplyRows(lpSupplies.optional, "o");
+    h += '</div></div></div>';
+  }
+  h += tabBar("Supplies");
+  el.innerHTML = h;
+}
+function supplyRows(items, prefix) {
+  var h = "";
+  for (var i = 0; i < items.length; i++) {
+    var key = prefix + i, it = items[i];
+    var done = d1State.checked[key] ? " done" : "";
+    if (it.kit) {
+      var open = d1State.expanded[key];
+      h += '<div class="ios-row' + done + (open ? " disc-open" : "") + '">'
+        + '<span class="sq" onclick="event.stopPropagation();d1Check(\'' + key + '\')">' + (d1State.checked[key] ? "✓" : "") + '</span>'
+        + '<span class="nm" onclick="d1Expand(\'' + key + '\')">' + it.name + '</span>'
+        + '<span class="disc-arrow" onclick="d1Expand(\'' + key + '\')">▼</span></div>';
+      if (open) {
+        h += '<div class="kit-contents">';
+        for (var j = 0; j < it.kit.length; j++) h += '<div>' + it.kit[j] + '</div>';
+        h += '</div>';
+      }
+    } else {
+      h += '<div class="ios-row' + done + '" onclick="d1Check(\'' + key + '\')">'
+        + '<span class="sq">' + (d1State.checked[key] ? "✓" : "") + '</span>'
+        + '<span class="nm">' + it.name + '</span></div>';
+    }
+  }
+  return h;
+}
+
+/* ===================== DEMO 2 — STEPS ===================== */
+
+var procedures = [
+  { t: "Arterial Line", cat: "vascular", icon: "📈", n: 12 },
+  { t: "Central Venous Line", s: "Internal Jugular", cat: "vascular", icon: "〰️", n: 15 },
+  { t: "Peripheral IV", cat: "vascular", icon: "💧", n: 7 },
+  { t: "Central Line Removal", cat: "vascular", icon: "🩹", n: 5 },
+  { t: "Arterial Blood Gas", cat: "diagnostic", icon: "💉", n: 5 },
+  { t: "Lumbar Puncture", cat: "diagnostic", icon: "🧠", n: 10, lp: true },
+  { t: "Phlebotomy", cat: "diagnostic", icon: "🩹", n: 5 },
+  { t: "Paracentesis", cat: "fluid", icon: "💉", n: 9 },
+  { t: "Nasogastric Tube", cat: "airway", icon: "👄", n: 6 }
+];
+
+/* Lumbar Puncture steps — text verbatim from the app */
+var lpSteps = [
+  { h: "Patient Positioning",
+    p: ["Place the patient either sitting <strong>upright</strong> or in <strong>lateral decubitus</strong> position. The lateral position is preferred for opening pressure measurement."],
+    c: "Encourage the patient to curl forward to widen interspinous spaces" },
+  { h: "Identify Landmarks",
+    p: ["Identify the lumbar puncture level by palpating the highest points of the iliac crests and projecting an intercristal (Tuffier's) line to the midline, which typically intersects the <strong>L4–L5 interspace</strong>.",
+        "The needle is inserted at the L3–L4 or L4–L5 interspace, below the termination of the conus medullaris, which in adults most commonly lies at the <strong>L1–L2</strong> level."] },
+  { h: "Skin Preparation",
+    p: ["After identifying the interspace by palpation, mark the intended needle insertion site with a sterile skin marker (or gently indent the skin with a syringe tip).",
+        "Prepare the skin using chlorhexidine or povidone–iodine, applied in concentric outward circles and allowed to dry completely.",
+        "Place sterile drapes to establish a sterile field before proceeding with local anesthesia."] },
+  { h: "Local Anesthesia",
+    p: ["Inject a lidocaine wheal or topical anesthetic, then infiltrate local anesthetic subcutaneously along the intended needle tract."],
+    c: "Aspirate before each injection to avoid intravascular administration" },
+  { h: "Needle Insertion",
+    p: ["With the stylet in place, insert the needle with the bevel facing <strong>cephalad</strong> and the needle angled toward the <strong>umbilicus</strong>.",
+        "Advance through ligamentum flavum indicated by a subtle <em>pop</em>."],
+    c: "Check for CSF return in <strong>2 mm</strong> increments" },
+  { h: "Troubleshooting Needle Insertion",
+    p: ["If bone is contacted, reposition without withdrawing fully.",
+        "If CSF return occurs but flow is sluggish, rotate the needle 90 degrees as a nerve root may obscure the side port."] },
+  { h: "Opening Pressure",
+    p: ["Ensure the patient is in the lateral decubitus position, which allows for accurate measurement of opening pressure.",
+        "Attach the stopcock to the lumbar puncture needle, keeping the stopcock <strong>closed toward the patient</strong> to prevent CSF loss.",
+        "The manometer often comes in two parts. You may choose to assemble the manometer first, then attach it to the stopcock.",
+        "Open the stopcock to allow CSF to rise in the manometer column. Wait for the CSF column to stabilize, then record the opening pressure.",
+        "<strong>Position the collection tube under the stopcock</strong>. Open the stopcock to the tube and manometer to collect CSF from the manometer. Once collection is complete, close the stopcock to the patient before removing the stopcock and needle assembly."],
+    c: "Ensure the first collection tube is open and available close by" },
+  { h: "CSF Collection",
+    p: ["Adults produce 500 – 600 mL of CSF daily (0.3 – 0.6 mL/min), replacing the total CNS volume of about 160 mL roughly four times per day.",
+        "Allow CSF to drip passively into the tubes. Collect <strong>3 – 4 mL</strong> per tube for a total of 12 - 16 mL.",
+        "The collected volume is quickly replenished by ongoing CSF production, generally within 20 – 60 minutes."],
+    c: "<strong>Never aspirate cerebrospinal fluid</strong>" },
+  { h: "Post-Procedure Care",
+    p: ["<strong>Replace the stylet before removing the needle</strong>. This prevents arachnoid tissue from being threaded back through the dural opening during needle removal. Apply a bandage.",
+        "Monitor for delayed complications such as worsening pain or neurologic symptoms."] },
+  { h: "Lumbar Puncture Orders",
+    bullets: ["CSF Cell count w/ Manual Differential", "CSF Glucose w/ Serum Glucose", "CSF Protein",
+      "CSF Lactate", "CSF Cytology", "CSF Gram Stain, Culture, and Sensitivities", "CSF AFB Culture",
+      "CSF Fungal Culture", "CSF Cryptococcal Antigen", "CSF Lyme Disease IgG/IgM Ab WB",
+      "CSF HSV ½ PCR", "CSF Varicella zoster Ab IgG", "CSF Treponema pallidum VDRL/RPR",
+      "CSF Oligoclonal Bands", "CSF Autoimmune Panels (e.g., Anti-NMDA Receptor Antibody)"] }
+];
+
+var d2State = { screen: "grid", filter: null, expanded: -1 };
+
+function d2Filter(cat) {
+  d2State.filter = (d2State.filter === cat) ? null : cat;
+  renderD2();
+}
+function d2Go(screen) { d2State.screen = screen; d2State.expanded = -1; renderD2(); }
+function d2Toggle(i) { d2State.expanded = (d2State.expanded === i) ? -1 : i; renderD2(); }
+
+function hexA(hex, a) {
+  var r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return "rgba(" + r + "," + g + "," + b + "," + a + ")";
+}
+
+function renderD2() {
+  var el = document.getElementById("d2");
+  var h = '<div class="notch"></div>';
+  if (d2State.screen === "grid") {
+    h += navBar("Steps");
+    h += '<div class="app-scroll">' + searchBar();
+    // filter chips
+    h += '<div class="fchips">';
+    h += fchip("All", "▦", SAGE, d2State.filter === null, "d2Filter(null)");
+    for (var c in CAT) h += fchip(CAT[c].name, CAT[c].icon, CAT[c].color, d2State.filter === c, "d2Filter('" + c + "')");
+    h += '</div>';
+    // category sections
+    for (var c in CAT) {
+      if (d2State.filter && d2State.filter !== c) continue;
+      var procs = procedures.filter(function(p){ return p.cat === c; });
+      if (!procs.length) continue;
+      h += '<div class="cat-head"><span class="cic">' + CAT[c].icon + '</span>' + CAT[c].name + '</div><div class="pgrid">';
+      for (var i = 0; i < procs.length; i++) {
+        var p = procs[i], col = CAT[c].color;
+        h += '<div class="pcard" style="border:1.5px solid ' + hexA(col,0.2) + '" ' + (p.lp ? 'onclick="d2Go(\'detail\')"' : "") + '>'
+          + '<div class="picon" style="background:' + hexA(col,0.15) + '">' + p.icon + '</div>'
+          + '<div class="pt">' + p.t + '</div>'
+          + (p.s ? '<div class="ps">' + p.s + '</div>' : "")
+          + '<div class="pf">≡ ' + p.n + ' steps</div></div>';
+      }
+      h += '</div>';
+    }
+    h += '<div style="height:14px"></div></div>';
+  } else {
+    h += navBar("Lumbar Puncture", "Steps", "d2Go('grid')");
+    h += '<div class="app-scroll"><div class="sd-title">Procedure Steps</div><div class="acc-list">';
+    for (var i = 0; i < lpSteps.length; i++) {
+      var s = lpSteps[i], open = d2State.expanded === i;
+      h += '<div class="acc' + (open ? " open" : "") + '">'
+        + '<div class="acc-h" onclick="d2Toggle(' + i + ')"><span>' + (i+1) + '. ' + s.h + '</span><span class="ach">▼</span></div>'
+        + '<div class="acc-b">';
+      if (s.bullets) {
+        h += '<ul>';
+        for (var j = 0; j < s.bullets.length; j++) h += '<li>' + s.bullets[j] + '</li>';
+        h += '</ul>';
+      } else {
+        for (var j = 0; j < s.p.length; j++) h += '<p>' + s.p[j] + '</p>';
+      }
+      if (s.c) h += '<div class="co"><span style="color:#e6b800">❗</span><span>' + s.c + '</span></div>';
+      h += '</div></div>';
+    }
+    h += '</div></div>';
+  }
+  h += tabBar("Steps");
+  el.innerHTML = h;
+}
+function fchip(name, icon, color, selected, onclick) {
+  var style = selected
+    ? 'background:' + hexA(color,0.2) + ';color:' + color + ';border-color:' + hexA(color,0.6) + ';'
+    : "";
+  return '<span class="fchip" onclick="' + onclick + '" style="' + style + '">' + icon + ' ' + name + '</span>';
+}
+
+/* ===================== DEMO 3 — CLINICAL INFO ===================== */
+
+var lpClinical = {
+  indications: [
+    "Obtain cerebrospinal fluid for analysis",
+    "Measure opening pressure",
+    "Administer medications such as antibiotics, anesthetics, or chemotherapy"
+  ],
+  contraindications: [
+    { t: "Signs of herniation", sev: "Absolute" },
+    { t: "Markedly increased ICP with focal deficits", sev: "Absolute" },
+    { t: "Severe cardiorespiratory instability", sev: "Absolute" },
+    { t: "Skin infection at the puncture site", sev: "Relative" },
+    { t: "Significant coagulopathy", sev: "Relative",
+      exp: "In patient with coagulopathy, risk for spinal hematoma increases to 0.23% (CI: 0.15-0.34%). Refer to spinal hematoma complication for references." }
+  ],
+  complications: [ /* sorted by incidence, highest first — as in the app */
+    { t: "Nerve Root Irritation", rate: "11%",
+      ref: "Nath S, Koziarz A, Badhiwala JH, et al. Atraumatic Versus Conventional Lumbar Puncture Needles: A Systematic Review and Meta-Analysis. Obstetric Anesthesia Digest. 2018;38(4):205-205." },
+    { t: "Post-Dural Puncture Headache (PDPH)", rate: "6.9%",
+      ref: "Nath S, Koziarz A, Badhiwala JH, et al. Atraumatic Versus Conventional Lumbar Puncture Needles: A Systematic Review and Meta-Analysis. Obstetric Anesthesia Digest. 2018;38(4):205-205." },
+    { t: "Traumatic Tap", rate: "6%",
+      ref: "Nath S, Koziarz A, Badhiwala JH, et al. Atraumatic Versus Conventional Lumbar Puncture Needles: A Systematic Review and Meta-Analysis. Obstetric Anesthesia Digest. 2018;38(4):205-205." },
+    { t: "Spinal Hematoma", rate: "0.20%", range: "0.16% - 0.24%",
+      ref: "Bodilsen J, Mariager T, Vestergaard HH, et al. Association of Lumbar Puncture With Spinal Hematoma in Patients With and Without Coagulopathy. JAMA. 2020;324(14):1419–1428." },
+    { t: "Herniation", rate: "0.10%", range: "0.10% - 3.0%",
+      ref: "Costerus JM, Brouwer MC, Sprengers MES, et al. Cranial Computed Tomography, Lumbar Puncture, and Clinical Deterioration in Bacterial Meningitis: A Nationwide Cohort Study. Clinical Infectious Diseases. 2018;67(6):920–926." },
+    { t: "Meningitis", rate: "0.002%",
+      ref: "Baer ET. Post–Dural Puncture Bacterial Meningitis. Anesthesiology. 2006;105(2):381-393." }
+  ]
+};
+var d3State = { expanded: {}, sheet: -1 };
+
+function d3Expand(i) { d3State.expanded[i] = !d3State.expanded[i]; renderD3(); }
+function d3Sheet(i) { d3State.sheet = i; renderD3(); }
+
+function renderD3() {
+  var el = document.getElementById("d3");
+  var red = "#ff3b30", orange = "#ff9500", green = "#34c759", yellow = "#ffcc00";
+  var h = '<div class="notch"></div>';
+  h += navBar("Lumbar Puncture", "Steps", "void(0)");
+  h += '<div class="app-scroll"><div class="ci-card">';
+
+  // Indications
+  h += '<div class="ci-head"><span style="color:' + green + '">✔︎</span>Indications</div>';
+  for (var i = 0; i < lpClinical.indications.length; i++) {
+    h += '<div class="crow" style="background:' + hexA(green,0.05) + ';border-color:' + hexA(green,0.15) + '">' + lpClinical.indications[i] + '</div>';
+  }
+  h += '<div class="ci-div"></div>';
+
+  // Contraindications (absolute first, then relative — as in the app)
+  h += '<div class="ci-head"><span>🛑</span>Contraindications</div>';
+  for (var i = 0; i < lpClinical.contraindications.length; i++) {
+    var ci = lpClinical.contraindications[i];
+    var col = ci.sev === "Absolute" ? red : orange;
+    var open = d3State.expanded[i];
+    h += '<div class="crow' + (ci.exp ? " tappable" : "") + (open ? " open" : "") + '" style="background:' + hexA(col,0.05) + ';border-color:' + hexA(col, open ? 0.3 : 0.15) + '"'
+      + (ci.exp ? ' onclick="d3Expand(' + i + ')"' : "") + '>'
+      + '<div class="crow-top">'
+      + '<span style="color:' + col + ';font-size:0.7rem">' + (ci.sev === "Absolute" ? "🛑" : "⚠️") + '</span>'
+      + '<span class="ctext">' + ci.t + '</span>'
+      + '<span class="cap" style="color:' + col + ';background:' + hexA(col,0.15) + '">' + ci.sev + '</span>'
+      + (ci.exp ? '<span class="cinfo" style="color:' + hexA(col,0.7) + '">' + (open ? "▲" : "ⓘ") + '</span>' : "")
+      + '</div>'
+      + (ci.exp ? '<div class="cexp">' + ci.exp + '</div>' : "")
+      + '</div>';
+  }
+  h += '<div class="ci-div"></div>';
+
+  // Complications
+  h += '<div class="ci-head"><span style="color:' + yellow + '">⚠️</span>Complications</div>';
+  for (var i = 0; i < lpClinical.complications.length; i++) {
+    var co = lpClinical.complications[i];
+    h += '<div class="crow tappable" style="background:' + hexA(yellow,0.05) + ';border-color:' + hexA(yellow,0.15) + '" onclick="d3Sheet(' + i + ')">'
+      + '<div class="crow-top"><span class="ctext">' + co.t + '</span>'
+      + '<span class="cinfo" style="color:' + hexA("#e6b800",0.9) + '">ⓘ</span></div></div>';
+  }
+  h += '</div><div style="height:10px"></div></div>';
+  h += tabBar("Steps");
+
+  // Complication detail sheet
+  var s = d3State.sheet >= 0 ? lpClinical.complications[d3State.sheet] : null;
+  h += '<div class="sheet-bg' + (s ? " show" : "") + '" onclick="d3Sheet(-1)"></div>';
+  h += '<div class="sheet' + (s ? " show" : "") + '">';
+  if (s) {
+    h += '<div class="grab"></div><h6>' + s.t + '</h6>'
+      + '<span class="rate-pill">Incidence: ' + s.rate + (s.range ? " (range " + s.range + ")" : "") + '</span>'
+      + '<div class="ref-h">Reference</div><div class="ref">' + s.ref + '</div>'
+      + '<button class="done-btn" onclick="d3Sheet(-1)">Done</button>';
+  }
+  h += '</div>';
+  el.innerHTML = h;
+}
+
+/* ===================== DEMO 4 — PORTFOLIO ===================== */
+
+var d4State = {
+  procedures: [
+    { name: "Arterial Blood Gas", count: 9 },
+    { name: "Arterial Line", count: 7 },
+    { name: "Central Line Removal", count: 2 },
+    { name: "Central Venous Line", count: 4 },
+    { name: "Lumbar Puncture", count: 3 },
+    { name: "Nasogastric Tube", count: 2 },
+    { name: "Paracentesis", count: 5 },
+    { name: "Peripheral IV", count: 6 },
+    { name: "Phlebotomy", count: 8 }
+  ],
+  logs: [
+    { p: "Arterial Line", d: "Jun 08, 2026" },
+    { p: "Lumbar Puncture", d: "Jun 06, 2026" },
+    { p: "Paracentesis", d: "Jun 05, 2026" },
+    { p: "Arterial Blood Gas", d: "Jun 04, 2026" },
+    { p: "Central Venous Line", d: "Jun 02, 2026" }
+  ]
+};
+function todayStr() {
+  var m = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var d = new Date();
+  return m[d.getMonth()] + " " + String(d.getDate()).padStart(2,"0") + ", " + d.getFullYear();
+}
+function d4Inc(i) {
+  d4State.procedures[i].count++;
+  d4State.logs.unshift({ p: d4State.procedures[i].name, d: todayStr() });
+  renderD4();
+}
+function d4Dec(i) {
+  var p = d4State.procedures[i];
+  if (p.count <= 0) return;
+  p.count--;
+  for (var j = 0; j < d4State.logs.length; j++) {
+    if (d4State.logs[j].p === p.name) { d4State.logs.splice(j, 1); break; }
+  }
+  renderD4();
+}
+function renderD4() {
+  var el = document.getElementById("d4");
+  var h = '<div class="notch"></div>';
+  h += navBar("Portfolio");
+  h += '<div class="app-scroll"><div class="ios-list">';
+  h += '<div class="ios-sec-head">Procedures</div><div class="ios-card">';
+  for (var i = 0; i < d4State.procedures.length; i++) {
+    var p = d4State.procedures[i];
+    h += '<div class="pf-ios-row"><span class="pname">' + p.name + '</span>'
+      + '<button class="pm" onclick="d4Dec(' + i + ')">−</button>'
+      + '<span class="pcount">' + p.count + '</span>'
+      + '<button class="pm" onclick="d4Inc(' + i + ')">+</button></div>';
+  }
+  h += '</div>';
+  h += '<div class="log-head"><span class="lh">Log History</span><span class="lf">≣ All Procedures</span></div><div class="ios-card">';
+  if (d4State.logs.length === 0) {
+    h += '<div class="log-empty">No logs yet — tap + to record a procedure</div>';
+  } else {
+    for (var i = 0; i < Math.min(d4State.logs.length, 12); i++) {
+      h += '<div class="log-row"><span class="ln">' + d4State.logs[i].p + '</span><span>' + d4State.logs[i].d + '</span></div>';
+    }
+  }
+  h += '</div></div></div>';
+  h += tabBar("Portfolio");
+  el.innerHTML = h;
+}
+
+/* init */
+renderD1();
+renderD2();
+renderD3();
+renderD4();
+</script>
+
+</body>
+</html>
